@@ -32,17 +32,17 @@ process.env.LANG = 'en_US.UTF-8';
 process.env.LANGUAGE = 'en_US:en';
 process.env.LC_ALL = 'en_US.UTF-8';
 // Configure CORS
-const corsOptions = {
-    origin: process.env.NODE_ENV === 'production'
-        ? [process.env.FRONTEND_URL || 'https://test-resumebuilder.netlify.app/' || ''].filter(Boolean)
-        : ['http://localhost:5173', 'https://localhost:5173'],
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
-    credentials: true,
-    maxAge: 86400 // 24 hours
-};
+// const corsOptions = {
+//   origin: process.env.NODE_ENV === 'production' 
+//     ? [process.env.FRONTEND_URL || 'https://test-resumebuilder.netlify.app/' || ''].filter(Boolean)
+//     : ['http://localhost:5173', 'https://localhost:5173'],
+//   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+//   allowedHeaders: ['Content-Type', 'Authorization'],
+//   credentials: true,
+//   maxAge: 86400 // 24 hours
+// };
 // Apply middlewares
-app.use((0, cors_1.default)(corsOptions));
+app.use((0, cors_1.default)());
 app.use((0, helmet_1.default)());
 app.use((0, morgan_1.default)('combined'));
 app.use((0, compression_1.default)());
