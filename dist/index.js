@@ -34,7 +34,7 @@ process.env.LC_ALL = 'en_US.UTF-8';
 // Configure CORS
 const corsOptions = {
     origin: process.env.NODE_ENV === 'production'
-        ? [process.env.FRONTEND_URL || ''].filter(Boolean)
+        ? [process.env.FRONTEND_URL || 'https://test-resumebuilder.netlify.app/' || ''].filter(Boolean)
         : ['http://localhost:5173', 'https://localhost:5173'],
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization'],
