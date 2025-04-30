@@ -2,8 +2,11 @@ services:
   - type: web
     name: ai-resume-architect-api
     env: node
-    buildCommand: cd server && npm install
+    region: oregon
+    plan: free
+    buildCommand: cd server && npm install && npm run build
     startCommand: cd server && npm start
+    healthCheckPath: /api/health
     envVars:
       - key: NODE_ENV
         value: production
@@ -11,9 +14,7 @@ services:
         sync: false
       - key: OPENAI_API_KEY
         sync: false
-      - key: LANG
-        value: en_US.UTF-8
-      - key: LANGUAGE
-        value: en_US:en
-      - key: LC_ALL
-        value: en_US.UTF-8
+      - key: FRONTEND_URL
+        value: https://airesume-architect.netlify.app/
+      - key: PORT
+        value: 10000
