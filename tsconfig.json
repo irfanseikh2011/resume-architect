@@ -33,7 +33,7 @@
     "skipLibCheck": true,  // ✅ Helps avoid third-party type issues
     "forceConsistentCasingInFileNames": true,
     "typeRoots": ["./node_modules/@types"],
-    "types": ["node", "express"]
+    //"types": ["node", "express"]
   },
   "include": ["src"],
   "exclude": ["node_modules"]
